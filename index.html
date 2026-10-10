@@ -3,26 +3,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zombie Brain Lab (under construction)</title>
-  <meta name="description" content="A teaching site that uses imagined zombie brain scans to explore the human brain. Under construction.">
-  <style>
-    body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.6; color: #1a1a1a; background: #fff; }
-    main { max-width: 40rem; margin: 0 auto; padding: 3rem 1rem; }
-    h1 { line-height: 1.2; }
-    footer { max-width: 40rem; margin: 0 auto; padding: 1rem; font-size: .9rem; border-top: 1px solid #ccc; }
-    a { color: #0b4f9c; }
-    a:focus-visible { outline: 3px solid #0b4f9c; outline-offset: 2px; }
-  </style>
+  <title>Zombie Brain Lab</title>
+  <meta name="description" content="A teaching site that uses imagined zombie brain scans to explore the human brain. Version 1 draft.">
+  <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-  <main>
-    <h1>Zombie Brain Lab</h1>
-    <p><strong>This site is under construction.</strong></p>
-    <p>A teaching site for introductory psychology that uses imagined zombie brain scans to explore the human brain.</p>
-  </main>
-  <footer>
-    <p>Built with help from Claude, an AI model made by Anthropic.</p>
-    <p>Except where otherwise noted, content on this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Code is licensed under the <a href="https://github.com/UzieB/zombie-brain-lab/blob/main/LICENSE">MIT License</a>.</p>
-  </footer>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-header"><div class="wrap">
+  <a class="site" href="index.html"><span class="z">Zombie</span> Brain Lab</a>
+  <nav aria-label="Main"><ul>
+    <li><a href="index.html" aria-current="page">Home</a></li>
+    <li><a href="index.html#case-files">Case files</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul></nav>
+</div></header>
+<div class="banner"><div class="wrap">These scans are imagined. But is the brain science real?</div></div>
+
+<main id="main"><div class="wrap">
+  <h1>Welcome to the <span class="z">Zombie</span> Brain Lab</h1>
+  <p class="note">Welcome to the Zombie Brain Lab. Our researchers have &ldquo;scanned&rdquo; the brains of zombies from <cite>Plants vs. Zombies</cite> and compared each one with a typical human brain. Look at the scans, read the reports, and decide whether the brain explains what the zombie does.</p>
+  <p><a class="button" href="#case-files">Start exploring</a></p>
+
+  <h2 id="case-files">Case files</h2>
+  <div class="cases">
+    <article class="case-card">
+      <img src="images/basic-zombie.webp" alt="Basic Zombie from Plants vs. Zombies" width="1000" height="1602">
+      <h3 class="z"><a href="basic-zombie.html">Basic Zombie</a></h3>
+      <details>
+        <summary>Observed behaviors</summary>
+        <ul>
+          <li>Walks slowly and steadily toward the house</li>
+          <li>Stops only to eat plants</li>
+          <li>Keeps coming while it&rsquo;s being hit, without dodging</li>
+          <li>Keeps walking for a moment after losing its head</li>
+        </ul>
+      </details>
+      <p class="credit">Image: <cite>Plants vs. Zombies</cite> &copy; Electronic Arts. Not covered by this site&rsquo;s Creative Commons license.</p>
+    </article>
+    <article class="case-card">
+      <img src="images/newspaper-zombie.webp" alt="Newspaper Zombie from Plants vs. Zombies" width="415" height="562">
+      <h3 class="z"><a href="newspaper-zombie.html">Newspaper Zombie</a></h3>
+      <details>
+        <summary>Observed behaviors</summary>
+        <ul>
+          <li>Walks slowly, holding a newspaper in front of its face</li>
+          <li>Bursts into rage when the paper is destroyed</li>
+          <li>Moves much faster once it&rsquo;s angry</li>
+        </ul>
+      </details>
+      <p class="credit">Image: <cite>Plants vs. Zombies</cite> &copy; Electronic Arts. Not covered by this site&rsquo;s Creative Commons license.</p>
+    </article>
+  </div>
+
+  <details id="real-research">
+    <summary>How do real researchers study the brain?</summary>
+    <p>Our zombie scans are made up, but real researchers use these tools:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Tool</th><th scope="col">What it shows</th><th scope="col">One limitation</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">CT</th><td>Pictures of the brain&rsquo;s structure, built from many x-rays</td><td>Uses radiation; less detailed than MRI</td></tr>
+          <tr><th scope="row">MRI</th><td>Detailed pictures of the brain&rsquo;s structure, made with a strong magnet</td><td>Shows structure, not activity</td></tr>
+          <tr><th scope="row">fMRI</th><td>Which areas are active, by tracking blood flow and oxygen</td><td>Activity is tracked indirectly and a little behind real time</td></tr>
+          <tr><th scope="row">PET</th><td>Which areas are active, by tracking a radioactive tracer</td><td>Little detail, imprecise timing, and radiation</td></tr>
+          <tr><th scope="row">EEG</th><td>Electrical activity, recorded from the scalp, millisecond by millisecond</td><td>Poor at showing where activity comes from</td></tr>
+          <tr><th scope="row">Lesion studies</th><td>What changes after damage to one area (e.g., stroke)</td><td>Damage rarely stays in just one area</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="prose">Our zombie &ldquo;scans&rdquo; are drawn as if they came from MRI, because MRI shows the brain&rsquo;s structure (<a href="about.html#ref-spielman">Spielman et al., 2020, &sect;3.4</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span></p>
+    <p class="prose">But some differences in a zombie&rsquo;s brain might be chemical rather than structural. One science writer suggests that a zombie&rsquo;s slow, jerky walk could come from a loss of dopamine, a chemical messenger involved in movement (<a href="about.html#ref-goodpaster">Goodpaster, 2023</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> An MRI shows the brain&rsquo;s structure, so it wouldn&rsquo;t reveal a problem like that. Science can be thwarted by the equipment available in the lab!</p>
+    <p class="prose">Getting a zombie to hold still in an MRI scanner is its own research challenge: the machine is loud, the scan takes a while, and the subject keeps asking for brains.</p>
+  </details>
+</div></main>
+
+<footer class="site-footer"><div class="wrap">
+  <p>Except where otherwise noted, content on this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Code is licensed under the <a href="https://github.com/UzieB/zombie-brain-lab/blob/main/LICENSE">MIT License</a>.</p>
+  <p>This website is not endorsed by or affiliated with EA or its licensors. <cite>Plants vs. Zombies</cite> images &copy; Electronic Arts.</p>
+  <p><a href="how-this-was-made.html">How this was made</a> &middot; <a href="wrestling-with-ai.html">Wrestling with AI</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="accessibility.html">Accessibility</a> &middot; Feedback form coming soon.</p>
+</div></footer>
 </body>
 </html>

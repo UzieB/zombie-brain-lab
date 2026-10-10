@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wrestling with AI (plain text) · Zombie Brain Lab</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-header"><div class="wrap">
+  <a class="site" href="index.html"><span class="z">Zombie</span> Brain Lab</a>
+  <nav aria-label="Main"><ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#case-files">Case files</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul></nav>
+</div></header>
+<div class="banner"><div class="wrap">These scans are imagined. But is the brain science real?</div></div>
+<main id="main"><div class="wrap prose-page">
+<h1>Wrestling with AI: plain-text version</h1>
+<p class="note">This is the same page as <a href="wrestling-with-ai.html">Wrestling with AI</a>, without color coding. Each passage written primarily by a human is labeled &ldquo;Written by a human.&rdquo; Everything else was written primarily by Claude, relying on human input.</p>
+<section id="intro">
+<span class="plain-label">Written by a human</span><div class="plain-passage"><p><strong>This is version 1. Expect mistakes.</strong></p></div>
+<span class="plain-label">Written by a human</span><div class="plain-passage"><p>The human behind this website is deeply troubled by the impact large language models have on our environment, politics, economics, creativity, and interpersonal relationships. This website was an experiment in playing with AI to see what was possible.</p></div>
+<span class="plain-label">Written by a human</span><div class="plain-passage"><p>The issues with AI are well documented, including that it replicates and reflects biases in its training data and design, its use has a devastating impact on the environment, and creating with it blurs lines of authorship. For useful and interesting research on AI, visit <a href="https://dair-institute.org/">DAIR (Distributed AI Research Institute)</a>.</p></div>
+<p><strong>[Written by a human:]</strong> Although the initial instructions, when this project began, included a request to track the tokens (the small chunks of text an AI model reads and writes, which can be a proxy for estimating the cost of the AI use), the tracking didn&rsquo;t happen. When asked why it did not happen, Claude responded that the chat app doesn&rsquo;t show a running token count, so tracking it would have taken a deliberate step at the end of each session and &ldquo;nobody was assigned to do it.&rdquo; Claude&rsquo;s best estimate (completed retroactively) is <strong>[End of human-written text.]</strong> that this project took roughly 100 million tokens, almost all of them the AI re-reading the growing conversation at each step, including about 400,000 tokens of text the AI wrote. Only one of the three working sessions could be measured: it used about 44 million tokens, including about 155,000 written by the AI. The other two are estimated from their length.</p>
+</section>
+<section id="dollars-energy" aria-labelledby="dollars-energy-h">
+<h2 id="dollars-energy-h">What does that mean in dollars and energy?</h2>
+<p>Tokens don&rsquo;t translate neatly into money or electricity, and Anthropic doesn&rsquo;t publish energy figures for its models, so these are rough translations.</p>
+<p><strong>Dollars.</strong> If a developer had paid Anthropic&rsquo;s published prices for this model ($4 per million tokens read for the first time, $0.20 per million tokens re-read, and $20 per million tokens written), this project would have cost roughly $40, and almost certainly between $25 and $60 (<a href="about.html#ref-anthropic">Anthropic, n.d.</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> That&rsquo;s not what the person building this site paid: the AI was used through a subscription plan, not billed per token.</p>
+<p><strong>Energy and water.</strong> Google reports that a typical text request to its Gemini AI uses about 0.24 watt-hours of electricity and about 0.26 milliliters of water, roughly five drops (<a href="about.html#ref-vahdat">Vahdat &amp; Dean, 2025</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> An independent estimate for ChatGPT puts a typical question at about 0.3 watt-hours, but close to 40 watt-hours when the AI has to read about 100,000 tokens of material at once (<a href="about.html#ref-you">You, 2025</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> This project sent the AI several hundred requests, most of them very long. Our best guess is that it used somewhere between 0.1 and 3 kilowatt-hours of electricity, most likely between half a kilowatt-hour and 1 kilowatt-hour. One kilowatt-hour is about what a laptop uses running for a full day, or a microwave running for an hour. Using Google&rsquo;s water figures, 1 kilowatt-hour would mean roughly 1 liter of water for cooling. Other researchers count more, for example the water used to generate the electricity.</p>
+<p>These are estimates built on other companies&rsquo; numbers for other AI models, so treat them as a sense of scale, not a measurement.</p>
+</section>
+<section id="trade-offs" aria-labelledby="trade-offs-h">
+<h2 id="trade-offs-h">Trade-offs we made</h2>
+<p>Building version 1 meant choosing between goals that pull against each other. We wanted the site to exist now, without a budget, so we used AI for work that people should do, such as drawing the brain scans and researching the science, and we labeled that work instead of hiding it. We used images from <cite>Plants vs. Zombies</cite> because we suspect students recognize them, even though that means part of the site can&rsquo;t be openly licensed. <strong>[Written by a human:]</strong> We didn&rsquo;t ask students about the value of this site before we built it, and we haven&rsquo;t yet asked students to evaluate it. <strong>[End of human-written text.]</strong> We simplified the science, showing two zombies, one view of the brain, and a few regions, which makes it easier to learn but less complete. We used a spooky font only for a few words, so the rest stays easy to read. And we chose to publish an unreviewed draft in public, with every unchecked claim labeled, because being open about our mistakes seemed better than waiting until we had none.</p>
+</section>
+<section id="ai-and-people" aria-labelledby="ai-and-people-h">
+<h2 id="ai-and-people-h">What AI did here, and what people should do</h2>
+<span class="plain-label">Written by a human</span><div class="plain-passage"><p>Claude produced the following table:</p></div>
+<div class="table-wrap"><table><thead><tr><th scope="col">Useful jobs for AI</th><th scope="col">Better done by people</th></tr></thead><tbody><tr><td>Drafting site code and templates for people to review</td><td>Artwork and illustration<span class="v1">Version 1: brain scans are AI-drawn and not yet reviewed.</span></td></tr><tr><td>Checking pages against accessibility rules</td><td>Accessibility testing with disabled users<span class="v1">Version 1: not yet done.</span></td></tr><tr><td>First drafts of image descriptions (alt text)</td><td>Final say on every scientific claim<span class="v1">Version 1: AI drafted the brain reports; no person has checked the science yet.</span></td></tr><tr><td>Organizing citations and checking APA format</td><td>Choosing which zombies people actually know (by asking students)<span class="v1">Version 1: not yet done; the team chose two zombies for the prototype.</span></td></tr><tr><td>Turning design notes into wireframes and plans</td><td>Adding human voice and tone<span class="v1">Version 1: the field notes are plain observations, and the one joke was drafted by AI.</span></td></tr><tr><td>Summarizing feedback, with personal details removed</td><td>Decisions about values, framing, and trade-offs</td></tr></tbody></table></div>
+</section>
+<section id="who-else" aria-labelledby="who-else-h">
+<h2 id="who-else-h">Who else should be at the table</h2>
+<span class="plain-label">Written by a human</span><div class="plain-passage"><p>The following table was created by Claude in response to a prompt about who should be on the design team.</p></div>
+<div class="table-wrap"><table><thead><tr><th scope="col">Role</th><th scope="col">Why we need them</th><th scope="col">Status</th></tr></thead><tbody><tr><th scope="row">Neuroscientist or neuroanatomist</th><td>Checks every brain claim and image before we share widely.</td><td>Not yet</td></tr><tr><th scope="row">Disabled students and accessibility testers</th><td>Real-world testing with screen readers, keyboard-only use, low vision, and cognitive access.</td><td>Not yet</td></tr><tr><th scope="row">Illustrator, ideally a CUNY student</th><td>Replaces the AI-drawn brain scans and site art.</td><td>Not yet</td></tr><tr><th scope="row">Copyright or scholarly communications librarian</th><td>Reviews our use of game images and our Creative Commons license.</td><td>Not yet</td></tr><tr><th scope="row">Game studies or media studies scholar</th><td>Reviews how we portray the game, its fans, and zombie tropes, including the zombie&rsquo;s roots in Haitian history and religion.</td><td>Not yet</td></tr><tr><th scope="row">Instructional designer or OER librarian</th><td>Aligns the site with course goals and helps share it as an open resource.</td><td>Not yet</td></tr><tr><th scope="row">Intro Psych students as testers</th><td>Tell us what&rsquo;s confusing, boring, or funny.</td><td>Not yet</td></tr></tbody></table></div>
+</section>
+</div></main>
+
+<footer class="site-footer"><div class="wrap">
+  <p>Except where otherwise noted, content on this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Code is licensed under the <a href="https://github.com/UzieB/zombie-brain-lab/blob/main/LICENSE">MIT License</a>.</p>
+  <p>This website is not endorsed by or affiliated with EA or its licensors. <cite>Plants vs. Zombies</cite> images &copy; Electronic Arts.</p>
+  <p><a href="how-this-was-made.html">How this was made</a> &middot; <a href="wrestling-with-ai.html">Wrestling with AI</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="accessibility.html">Accessibility</a> &middot; Feedback form coming soon.</p>
+</div></footer>
+</body>
+</html>

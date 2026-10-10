@@ -2,6 +2,13 @@
 
 All notable changes to this site are recorded here, newest first.
 
+## 2026-10-10
+- Built the version 1 prototype from Website Text Draft 5 and Front Lawn Design Draft 4: Home, Basic Zombie and Newspaper Zombie case files, About, How This Was Made, Wrestling with AI, Privacy, and Accessibility.
+- Added interactive brain drawings (AI-drawn, not yet checked by an expert) with region highlighting and a text region guide.
+- Added authorship color coding (purple = written primarily by a human) on About, How This Was Made, and Wrestling with AI, with plain-text versions that label human-written passages.
+- Self-hosted fonts (Atkinson Hyperlegible, Bricolage Grotesque, Creepster; SIL Open Font License) and two Plants vs. Zombies images (© Electronic Arts, not covered by this site's license).
+- Corrected the Accessibility statement: highlighted brain regions get a thicker outline as well as a color change (they don't change shape).
+
 ## 2026-10-09
 - Set up the repository and GitHub Pages.
 - Added a placeholder home page, README, licenses (CC BY-SA 4.0 for content, MIT for code), and this changelog.

@@ -2,7 +2,7 @@
 
 A teaching website for introductory psychology students. It uses imagined brain scans of zombies from *Plants vs. Zombies* to teach the regions and functions of the human brain.
 
-**Status:** under construction (version 1 in progress).
+**Status:** version 1 draft. Science claims and brain drawings have not yet been checked by a person.
 
 **Live site:** https://uzieb.github.io/zombie-brain-lab/
 
@@ -11,6 +11,7 @@ A teaching website for introductory psychology students. It uses imagined brain 
 - A static website hosted on GitHub Pages: plain HTML, CSS, and JavaScript, with no database and no tracking.
 - Built with help from Claude, an AI model made by Anthropic. Version 1 uses AI for some work that people should ideally do, including drafting text and drawing brain illustrations. Expect mistakes, and please report them.
 - Changes are recorded in [CHANGELOG.md](CHANGELOG.md).
+- Fonts in `fonts/` are licensed under the SIL Open Font License (license files included).
 
 ## License
 
