@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wrestling with AI · Zombie Brain Lab</title>
   <link rel="stylesheet" href="css/site.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -15,6 +18,7 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="index.html#case-files">Case files</a></li>
     <li><a href="about.html">About</a></li>
+    <li><a href="wrestling-with-ai.html" aria-current="page">Wrestling with AI</a></li>
   </ul></nav>
 </div></header>
 <div class="banner"><div class="wrap">These scans are imagined. But is the brain science real?</div></div>
@@ -22,7 +26,7 @@
 <h1>Wrestling with AI</h1>
 <section id="intro">
 <p class="authorship-note">In this section, text in purple was written primarily by a human; the rest was written primarily by Claude, relying on human input. (If you can&rsquo;t see the different colors, <a href="wrestling-with-ai-plain.html#intro">see the distinction a different way</a>.)</p>
-<p><span class="human"><strong>This is version 1. Expect mistakes.</strong></span></p>
+<p><span class="human">This site was planned and drafted by engaging a large language model, Claude, by Anthropic, used in the Claude desktop app (Cowork). A human wrote a detailed project plan (about 3,000 words), which included naming concerns with AI and attempting to encourage Claude to incorporate a critical approach in its output. Claude was prompted, in an interactive process with human feedback, to draft plans, research summaries, page text, code, and the version 1 brain drawings. The website will go no further until and unless a team of humans, with various kinds of expertise and perspectives, decides it is worth pursuing, including checking science claims.</span></p>
 <p><span class="human">The human behind this website is deeply troubled by the impact large language models have on our environment, politics, economics, creativity, and interpersonal relationships. This website was an experiment in playing with AI to see what was possible.</span></p>
 <p><span class="human">The issues with AI are well documented, including that it replicates and reflects biases in its training data and design, its use has a devastating impact on the environment, and creating with it blurs lines of authorship. For useful and interesting research on AI, visit <a href="https://dair-institute.org/">DAIR (Distributed AI Research Institute)</a>.</span></p>
 <p><span class="human">Although the initial instructions, when this project began, included a request to track the tokens (the small chunks of text an AI model reads and writes, which can be a proxy for estimating the cost of the AI use), the tracking didn&rsquo;t happen. When asked why it did not happen, Claude responded that the chat app doesn&rsquo;t show a running token count, so tracking it would have taken a deliberate step at the end of each session and &ldquo;nobody was assigned to do it.&rdquo; Claude&rsquo;s best estimate (completed retroactively) is</span> that this project took roughly 100 million tokens, almost all of them the AI re-reading the growing conversation at each step, including about 400,000 tokens of text the AI wrote. Only one of the three working sessions could be measured: it used about 44 million tokens, including about 155,000 written by the AI. The other two are estimated from their length.</p>
@@ -42,13 +46,13 @@
 <section id="ai-and-people" aria-labelledby="ai-and-people-h">
 <h2 id="ai-and-people-h">What AI did here, and what people should do</h2>
 <p class="authorship-note">In this section, text in purple was written primarily by a human; the rest was written primarily by Claude, relying on human input. (If you can&rsquo;t see the different colors, <a href="wrestling-with-ai-plain.html#ai-and-people">see the distinction a different way</a>.)</p>
-<p><span class="human">Claude produced the following table:</span></p>
+<p><span class="human">The following table was created by Claude in response to a prompt about what would be better to have humans create and directing it to various sources that critique AI.</span></p>
 <div class="table-wrap"><table><thead><tr><th scope="col">Useful jobs for AI</th><th scope="col">Better done by people</th></tr></thead><tbody><tr><td>Drafting site code and templates for people to review</td><td>Artwork and illustration<span class="v1">Version 1: brain scans are AI-drawn and not yet reviewed.</span></td></tr><tr><td>Checking pages against accessibility rules</td><td>Accessibility testing with disabled users<span class="v1">Version 1: not yet done.</span></td></tr><tr><td>First drafts of image descriptions (alt text)</td><td>Final say on every scientific claim<span class="v1">Version 1: AI drafted the brain reports; no person has checked the science yet.</span></td></tr><tr><td>Organizing citations and checking APA format</td><td>Choosing which zombies people actually know (by asking students)<span class="v1">Version 1: not yet done; the team chose two zombies for the prototype.</span></td></tr><tr><td>Turning design notes into wireframes and plans</td><td>Adding human voice and tone<span class="v1">Version 1: the field notes are plain observations, and the one joke was drafted by AI.</span></td></tr><tr><td>Summarizing feedback, with personal details removed</td><td>Decisions about values, framing, and trade-offs</td></tr></tbody></table></div>
 </section>
 <section id="who-else" aria-labelledby="who-else-h">
 <h2 id="who-else-h">Who else should be at the table</h2>
 <p class="authorship-note">In this section, text in purple was written primarily by a human; the rest was written primarily by Claude, relying on human input. (If you can&rsquo;t see the different colors, <a href="wrestling-with-ai-plain.html#who-else">see the distinction a different way</a>.)</p>
-<p><span class="human">The following table was created by Claude in response to a prompt about who should be on the design team.</span></p>
+<p><span class="human">The following table was created by Claude in response to a prompt about who should be on the design team and providing it a memo that included describing the kind of feedback this site should withstand.</span></p>
 <div class="table-wrap"><table><thead><tr><th scope="col">Role</th><th scope="col">Why we need them</th><th scope="col">Status</th></tr></thead><tbody><tr><th scope="row">Neuroscientist or neuroanatomist</th><td>Checks every brain claim and image before we share widely.</td><td>Not yet</td></tr><tr><th scope="row">Disabled students and accessibility testers</th><td>Real-world testing with screen readers, keyboard-only use, low vision, and cognitive access.</td><td>Not yet</td></tr><tr><th scope="row">Illustrator, ideally a CUNY student</th><td>Replaces the AI-drawn brain scans and site art.</td><td>Not yet</td></tr><tr><th scope="row">Copyright or scholarly communications librarian</th><td>Reviews our use of game images and our Creative Commons license.</td><td>Not yet</td></tr><tr><th scope="row">Game studies or media studies scholar</th><td>Reviews how we portray the game, its fans, and zombie tropes, including the zombie&rsquo;s roots in Haitian history and religion.</td><td>Not yet</td></tr><tr><th scope="row">Instructional designer or OER librarian</th><td>Aligns the site with course goals and helps share it as an open resource.</td><td>Not yet</td></tr><tr><th scope="row">Intro Psych students as testers</th><td>Tell us what&rsquo;s confusing, boring, or funny.</td><td>Not yet</td></tr></tbody></table></div>
 </section>
 </div></main>
@@ -56,7 +60,7 @@
 <footer class="site-footer"><div class="wrap">
   <p>Except where otherwise noted, content on this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Code is licensed under the <a href="https://github.com/UzieB/zombie-brain-lab/blob/main/LICENSE">MIT License</a>.</p>
   <p>This website is not endorsed by or affiliated with EA or its licensors. <cite>Plants vs. Zombies</cite> images &copy; Electronic Arts.</p>
-  <p><a href="how-this-was-made.html">How this was made</a> &middot; <a href="wrestling-with-ai.html">Wrestling with AI</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="accessibility.html">Accessibility</a> &middot; Feedback form coming soon.</p>
+  <p><a href="wrestling-with-ai.html">Wrestling with AI</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="accessibility.html">Accessibility</a> &middot; Feedback form coming soon.</p>
 </div></footer>
 </body>
 </html>

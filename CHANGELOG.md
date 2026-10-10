@@ -3,6 +3,7 @@
 All notable changes to this site are recorded here, newest first.
 
 ## 2026-10-10
+- Later the same day: added a site icon (the "Z" from Zombie); added Wrestling with AI to the top menu; replaced the "Start exploring" button with a sentence; removed "This is version 1. Expect mistakes."; merged How This Was Made into Wrestling with AI as its first paragraph; reworded the two table introductions on Wrestling with AI.
 - Built the version 1 prototype from Website Text Draft 5 and Front Lawn Design Draft 4: Home, Basic Zombie and Newspaper Zombie case files, About, How This Was Made, Wrestling with AI, Privacy, and Accessibility.
 - Added interactive brain drawings (AI-drawn, not yet checked by an expert) with region highlighting and a text region guide.
 - Added authorship color coding (purple = written primarily by a human) on About, How This Was Made, and Wrestling with AI, with plain-text versions that label human-written passages.
