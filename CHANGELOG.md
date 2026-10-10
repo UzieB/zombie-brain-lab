@@ -3,6 +3,7 @@
 All notable changes to this site are recorded here, newest first.
 
 ## 2026-10-10
+- Final round of edits: "Observed behaviors" on Home now starts expanded; removed "(optional)" from Predict first and added "Review the field notes and then consider how to explain the zombie's behavior."; added an Original Project Plan page (the project memo, typos fixed), linked from "detailed project plan" on Wrestling with AI; in "Trade-offs we made," the sentence about asking students is no longer marked as human-written, and that section no longer has the authorship note.
 - Later the same day: added a site icon (the "Z" from Zombie); added Wrestling with AI to the top menu; replaced the "Start exploring" button with a sentence; removed "This is version 1. Expect mistakes."; merged How This Was Made into Wrestling with AI as its first paragraph; reworded the two table introductions on Wrestling with AI.
 - Built the version 1 prototype from Website Text Draft 5 and Front Lawn Design Draft 4: Home, Basic Zombie and Newspaper Zombie case files, About, How This Was Made, Wrestling with AI, Privacy, and Accessibility.
 - Added interactive brain drawings (AI-drawn, not yet checked by an expert) with region highlighting and a text region guide.
