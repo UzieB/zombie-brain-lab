@@ -72,6 +72,12 @@ details[open] > summary { margin-bottom:.25rem; }
 .case-card img { display:block; height:180px; width:auto; margin:0 auto .5rem; object-fit:contain; }
 .case-card h3 { margin:.25rem 0; font-size:1.9rem; font-weight:400; }
 .case-card h3 a { color:var(--deep); }
+/* The whole case card is a link: the name's link stretches over the card. The behaviors toggle stays clickable on its own. */
+.case-card { position:relative; cursor:pointer; }
+.case-card h3 a::after { content:""; position:absolute; inset:0; border-radius:19px; }
+.case-card details > summary { position:relative; z-index:1; }
+.case-card:hover { border-color:var(--deep); box-shadow:0 0 0 2px var(--deep); }
+.case-card:has(h3 a:focus-visible) { outline:3px solid var(--focus); outline-offset:3px; }
 .case-card details { padding:0; margin-top:.25rem; }
 .case-card details > summary { font-size:1rem; }
 .credit { font-size:.8rem; color:#3d4f3f; }
@@ -87,8 +93,10 @@ details[open] > summary { margin-bottom:.25rem; }
 .case-head img { display:block; max-height:220px; width:auto; margin:0 auto; }
 .case-head figcaption { font-size:.75rem; line-height:1.35; color:#3d4f3f; }
 .regions { display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; margin:1.25rem 0 .75rem; }
-.now { min-height:1.6em; font-weight:700; max-width:44em; scroll-margin-top:.75rem; }
-.now .back { font:inherit; font-weight:400; font-size:.9rem; color:var(--deep); background:none; border:0; padding:0; margin-left:.4rem; text-decoration:underline; cursor:pointer; }
+.now { min-height:1.6em; font-weight:700; max-width:44em; margin:.75rem 0 .25rem; }
+.now:empty { margin:0; min-height:0; }
+.now-back { margin:0 0 .5rem; }
+.now-back .back { font:inherit; font-weight:400; font-size:.9rem; color:var(--deep); background:none; border:0; padding:0; margin-left:.4rem; text-decoration:underline; cursor:pointer; }
 .region-link { font:inherit; color:var(--deep); background:none; border:0; border-bottom:2px dotted var(--deep); border-radius:3px; padding:0; margin:0 0 -2px; line-height:inherit; cursor:pointer; }
 .region-link:hover { background:#FFF4A3; }
 .region-link.on { background:var(--glow); color:var(--ink); border-bottom-style:solid; }
@@ -98,6 +106,12 @@ details[open] > summary { margin-bottom:.25rem; }
 .scans figcaption .z { font-size:1.6rem; line-height:1; color:var(--deep); }
 .scans svg { width:100%; height:auto; display:block; }
 .ai-label { font-size:.85rem; }
+/* Phone-only switch between the control and zombie brain */
+.brain-switch { display:none; flex-wrap:wrap; gap:.4rem; align-items:center; margin:.5rem 0 .6rem; scroll-margin-top:.75rem; }
+.brain-switch button { font:inherit; font-weight:700; cursor:pointer; padding:.35rem .9rem; font-size:.95rem; background:#fff; color:var(--ink); border:2.5px solid var(--ink); border-radius:999px; }
+.brain-switch button[aria-pressed="true"] { background:var(--ink); color:#fff; }
+.scans { scroll-margin-top:.75rem; }
+.phone-tip { display:none; font-size:.85rem; font-style:italic; margin:.5rem 0 0; }
 .region-guide dt { font-weight:700; margin-top:.5rem; }
 .region-guide dd { margin:0 0 0 1rem; }
 .region-guide.icons .item { display:grid; grid-template-columns:72px 1fr; gap:.1rem .9rem; align-items:center; padding:.5rem 0; border-top:1px solid #DCEBD5; }
@@ -120,6 +134,8 @@ details[open] > summary { margin-bottom:.25rem; }
 .drip { fill:#6F7F4A; stroke:var(--ink); stroke-width:1.4; }
 .strand { fill:none; stroke:#A88F5A; stroke-width:1.6; }
 .band { fill:#C9B07A; stroke:var(--ink); stroke-width:1.6; }
+.strand.zg { stroke:#5E6E3A; }
+.band.zg { fill:#8F9E68; }
 .ghost { fill:none; stroke:#183A1D; stroke-width:1.6; stroke-dasharray:4 3; }
 .rg.thal { fill:#8FD3E0; }
 .rg.hypo { fill:#A9D99A; }
@@ -136,6 +152,9 @@ details[open] > summary { margin-bottom:.25rem; }
 .rg.sel:not(.hip):not(.hipline) { fill:var(--glow) !important; stroke-width:3.5; }
 .rg.hip.sel { stroke:var(--glow) !important; }
 .rg.hipline.sel { stroke-width:16 !important; }
+.rg.pick { cursor:pointer; }
+/* Decorations drawn on top of a region let clicks pass through to the region. */
+.scans .gyri, .scans .folia, .scans .strand, .scans .band, .scans .drip, .scans .ghost { pointer-events:none; }
 
 /* Tables */
 .table-wrap { overflow-x:auto; }
@@ -159,11 +178,16 @@ footer.site-footer :focus-visible { outline-color:var(--dandelion); }
 @media (max-width:700px) {
   .case-head { grid-template-columns:1fr; }
   .case-head figure { grid-column:1; grid-row:auto; max-width:none; margin-top:1rem; }
-  /* Brains stay side by side on phones so they can be compared at a glance. */
-  .scans { gap:.5rem; }
-  .scans figure { padding:.25rem .4rem .4rem; border-radius:14px; border-width:2px; }
-  .scans figcaption { font-size:.95rem; line-height:1.75rem; }
-  .scans figcaption .z { font-size:1.2rem; }
+  /* With JavaScript, phones show one brain at a time, full width, with a switch above. */
+  .brain-switch { display:flex; }
+  .scans[data-show] { grid-template-columns:1fr; }
+  .scans[data-show="control"] .fig-zombie, .scans[data-show="zombie"] .fig-control { display:none; }
+  /* Without JavaScript, the brains stay side by side. */
+  .scans:not([data-show]) { gap:.5rem; }
+  .scans:not([data-show]) figure { padding:.25rem .4rem .4rem; border-radius:14px; border-width:2px; }
+  .scans:not([data-show]) figcaption { font-size:.95rem; line-height:1.75rem; }
+  .scans:not([data-show]) figcaption .z { font-size:1.2rem; }
+  .phone-tip { display:block; }
 }
 
 /* Case file: brain report as an expandable card */

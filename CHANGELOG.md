@@ -3,6 +3,15 @@
 All notable changes to this site are recorded here, newest first.
 
 ## 2026-10-10
+- Basic Zombie: Predict first now asks why the two brains are different and how the differences explain the zombie's behavior.
+- Case file pages: removed the drip marks below the zombies' prefrontal cortex.
+- Case file pages: on phones, the brains are shown one at a time at full width, with "Control brain" and "Zombie brain" buttons to switch between them (a highlighted region stays highlighted when switching). Without JavaScript, they stay side by side.
+- Case file pages: the description of a highlighted region now appears below the brains, so the drawings no longer move down when a region is chosen. Screen readers announce the description; the "Back to the report" button now sits just after it rather than inside it.
+- Home: the whole case card (picture, name, and behaviors list) now opens the case file; the "Observed behaviors" toggle still opens and closes on its own.
+- Case file pages: the zombies' thick, braided spinal cord is now drawn in zombie green; image descriptions updated.
+- Case file pages: on phones, a short tip under the brains suggests using the buttons for small regions.
+- Case file pages: every region drawn in the brains is now clickable and in the region guide, which is the same on both pages. New entries: cerebral cortex, corpus callosum, pituitary gland, and pons (now separate from the rest of the brainstem); the Basic Zombie guide also gains the thalamus, hypothalamus, basal ganglia, and hippocampus. Highlighting the cerebral cortex includes the prefrontal cortex, and highlighting the brainstem includes the pons.
+- Case file pages: clicking a region in either brain drawing now highlights it, just like its button above the brains.
 - Removed the change log section from the About page (and its plain-text version); this file and the GitHub history remain the record of changes.
 - Region guide: each entry now has a small gray brain icon with that region in yellow; the amygdala and hypothalamus icons are enlarged to be visible, and their entries say so.
 - Smaller prefrontal cortex is now drawn so the front of the brain pulls back (with a dashed line at the typical edge), instead of shrinking inside an unchanged outline; both zombies' prefrontal cortex is now drawn at half size.

@@ -35,16 +35,18 @@
     news:  { mod: { pfc: .5, hip: .55, amy: 1.45, cord: 1.9 }, dmg: ['pfc', 'hip', 'amy'], strong: true }
   };
 
-  function cordSVG(w, strong) {
+  function cordSVG(w, strong, id) {
     var L = 213 - w, R = 213 + w;
-    var base = '<path class="rg cord outline" data-r="cord" d="M' + L + ',222 L' + R + ',222 L' + (213 + w * 0.9) + ',275 L' + (213 - w * 0.9) + ',275 Z"/>';
+    var base = '<path class="rg cord outline" data-r="cord" d="M' + L + ',222 L' + R + ',222 L' + (213 + w * 0.9) + ',275 L' + (213 - w * 0.9) + ',275 Z"' +
+      (strong ? ' style="fill:url(#mot-' + id + ')"' : '') + '/>';
     if (!strong) return base;
+    // The zombies' reinforced cord is drawn in zombie green (Elissa's choice, 2026-10-10).
     // Braided cable: diagonal strands plus two bands.
     var t = '';
     for (var y = 226; y < 272; y += 6) t += 'M' + (L + 1) + ',' + y + ' L' + (R - 1) + ',' + (y + 7) + ' ';
-    return base + '<path class="strand" d="' + t + '"/>' +
-      '<rect class="band" x="' + (L - 2) + '" y="232" width="' + (2 * w + 4) + '" height="6" rx="2"/>' +
-      '<rect class="band" x="' + (L - 2) + '" y="256" width="' + (2 * w + 4) + '" height="6" rx="2"/>';
+    return base + '<path class="strand zg" d="' + t + '"/>' +
+      '<rect class="band zg" x="' + (L - 2) + '" y="232" width="' + (2 * w + 4) + '" height="6" rx="2"/>' +
+      '<rect class="band zg" x="' + (L - 2) + '" y="256" width="' + (2 * w + 4) + '" height="6" rx="2"/>';
   }
 
   var uid = 0;
@@ -83,8 +85,7 @@
           pts.push(b);
           cracks += poly(pts) + ' ';
         });
-        cracks = '<path class="crack" d="' + cracks + '"/>' +
-          '<path class="drip" d="M84,157 C84,165 80,171 80,176 C80,182 88,182 88,176 C88,171 84,165 84,157 Z M94,155 C94,160 92,163 92,166 C92,170 97,170 97,166 C97,163 94,160 94,155 Z"/>';
+        cracks = '<path class="crack" d="' + cracks + '"/>';
       }
       pfcSVG = '<path class="ghost" d="' + FRONT + '"/>' +
         '<path class="rg pfc outline" data-r="pfc" d="' + shape + '" ' + rot('pfc') + '/>' + cracks;
@@ -96,15 +97,15 @@
       '<filter id="rot-' + id + '" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.11" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="8" xChannelSelector="R" yChannelSelector="G"/></filter>' +
       '<pattern id="mot-' + id + '" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#B9C595"/><circle cx="4" cy="5" r="2.4" fill="#8F9E68"/><circle cx="11" cy="10" r="1.6" fill="#8F9E68"/><circle cx="10" cy="2" r="1" fill="#7C8B57"/></pattern>' +
       '</defs>' +
-      cordSVG(6.5 * s('cord'), strong) +
+      cordSVG(6.5 * s('cord'), strong, id) +
       '<ellipse class="rg cbl outline" data-r="cbl" cx="255" cy="190" rx="38" ry="23"/>' +
       '<path class="folia" d="M224,181 C245,177 268,177 288,182 M220,190 C245,186 270,186 292,191 M222,199 C245,196 268,196 289,200 M230,207 C248,205 266,205 282,208"/>' +
       '<g' + clipAttr + '>' +
-      '<path class="cortex outline" d="M62,122 C52,72 102,32 177,31 C252,30 306,68 306,118 C307,158 291,175 262,173 C243,171 229,166 216,160 L190,160 C172,174 152,184 131,182 C111,180 100,168 88,159 C74,154 63,142 62,122 Z"/>' +
+      '<path class="rg cortex outline" data-r="cortex" d="M62,122 C52,72 102,32 177,31 C252,30 306,68 306,118 C307,158 291,175 262,173 C243,171 229,166 216,160 L190,160 C172,174 152,184 131,182 C111,180 100,168 88,159 C74,154 63,142 62,122 Z"/>' +
       '<path class="gyri" d="M110,52 C122,62 128,60 140,52 M150,40 C160,55 172,55 182,42 M200,38 C206,52 222,54 230,44 M248,52 C252,66 268,70 276,62 M286,88 C278,100 284,112 296,116 M286,142 C276,140 270,150 276,160 M96,96 C108,94 112,104 104,114 M232,76 C240,88 256,90 262,82"/>' +
       '</g>' +
       pfcSVG +
-      '<path class="rg cc outline" d="M116,98 C128,66 222,58 254,92 C258,98 252,104 246,100 C218,76 140,80 126,104 C122,108 114,104 116,98 Z"/>' +
+      '<path class="rg cc outline" data-r="cc" d="M116,98 C128,66 222,58 254,92 C258,98 252,104 246,100 C218,76 140,80 126,104 C122,108 114,104 116,98 Z"/>' +
       '<path class="rg bg outline" data-r="bg" d="M142,104 C140,90 160,84 172,90 C164,92 154,98 156,110 C157,120 150,122 146,118 Z M150,124 C150,114 170,112 176,120 C178,130 160,134 150,124 Z"/>' +
       '<path class="rg hipline" data-r="hip" d="' + hipD + '" style="stroke-width:' + (3 + 10 * s('hip')) + (D('hip') ? ';stroke-dasharray:16 5' : '') + '" ' + (D('hip') ? 'filter="url(#rot-' + id + ')"' : '') + '/>' +
       '<path class="rg hip" data-r="hip" d="' + hipD + '" style="stroke-width:' + (7 * s('hip')) + (D('hip') ? ';stroke:#9FAE78;stroke-dasharray:16 5' : '') + '" ' + (D('hip') ? 'filter="url(#rot-' + id + ')"' : '') + '/>' +
@@ -114,37 +115,45 @@
       '</g>' +
       '<ellipse class="rg thal outline" data-r="thal" cx="192" cy="110" rx="23" ry="15"/>' +
       '<path class="rg stem outline" data-r="stem" d="M184,122 L208,122 L214,155 L188,155 Z M194,188 L218,187 L219,222 L207,222 Z"/>' +
-      '<path class="rg pons outline" data-r="stem" d="M188,154 L214,154 L218,188 L196,190 C180,186 178,162 188,154 Z"/>' +
+      '<path class="rg pons outline" data-r="pons" d="M188,154 L214,154 L218,188 L196,190 C180,186 178,162 188,154 Z"/>' +
       '<ellipse class="rg hypo outline" data-r="hypo" cx="170" cy="127" rx="11" ry="7"/>' +
       '<path d="M168,134 L165,145" stroke="#183A1D" stroke-width="3"/>' +
-      '<circle class="rg pit outline" cx="164" cy="148" r="4.5"/>' +
+      '<circle class="rg pit outline" data-r="pit" cx="164" cy="148" r="4.5"/>' +
       '</svg>';
   }
 
   // Small gray brain for the region guide, with only one region shown in yellow.
   // The two smallest regions are drawn larger than life (and ringed) so they can be seen.
-  var ICON_SMALL = { amy: 'Amygdala', hypo: 'Hypothalamus' };
+  var ICON_SMALL = { amy: 'Amygdala', hypo: 'Hypothalamus', pit: 'Pituitary gland' };
+  // Choosing a larger region also highlights the parts of it that have their own entries.
+  var PARTS = { cortex: ['pfc'], stem: ['pons'] };
+  function lit(k, key) { return k === key || (PARTS[key] || []).indexOf(k) !== -1; }
   function icon(key, name) {
     var GRAY = '#ECEDEA', LINE = '#A3A9A1', INK = '#183A1D', ON = '#FFEA00';
     function part(k, d, tag) {
-      var on = k === key, a = ' fill="' + (on ? ON : GRAY) + '" stroke="' + (on ? INK : LINE) + '" stroke-width="' + (on ? 5 : 3) + '"';
+      var on = lit(k, key), a = ' fill="' + (on ? ON : GRAY) + '" stroke="' + (on ? INK : LINE) + '" stroke-width="' + (on ? 5 : 3) + '"';
       return tag === 'e' ? '<ellipse ' + d + a + '/>' : '<path d="' + d + '"' + a + ' stroke-linejoin="round"/>';
     }
     var hipD = 'M140,150 C156,166 196,170 214,146 C226,128 230,116 224,108', h = key === 'hip';
     return '<svg class="region-icon" viewBox="50 24 262 256" role="img" aria-label="Where the ' + name.toLowerCase() + ' is in the brain" focusable="false">' +
       part('cord', 'M206,222 L220,222 L219,275 L207,275 Z') +
       part('cbl', 'cx="255" cy="190" rx="38" ry="23"', 'e') +
-      '<path d="M62,122 C52,72 102,32 177,31 C252,30 306,68 306,118 C307,158 291,175 262,173 C243,171 229,166 216,160 L190,160 C172,174 152,184 131,182 C111,180 100,168 88,159 C74,154 63,142 62,122 Z" fill="' + GRAY + '" stroke="' + LINE + '" stroke-width="3"/>' +
+      part('cortex', 'M62,122 C52,72 102,32 177,31 C252,30 306,68 306,118 C307,158 291,175 262,173 C243,171 229,166 216,160 L190,160 C172,174 152,184 131,182 C111,180 100,168 88,159 C74,154 63,142 62,122 Z') +
       part('pfc', PFC) +
+      part('cc', 'M116,98 C128,66 222,58 254,92 C258,98 252,104 246,100 C218,76 140,80 126,104 C122,108 114,104 116,98 Z') +
       part('bg', 'M142,104 C140,90 160,84 172,90 C164,92 154,98 156,110 C157,120 150,122 146,118 Z M150,124 C150,114 170,112 176,120 C178,130 160,134 150,124 Z') +
       '<path d="' + hipD + '" fill="none" stroke="' + (h ? INK : LINE) + '" stroke-width="' + (h ? 17 : 13) + '" stroke-linecap="round"/>' +
       '<path d="' + hipD + '" fill="none" stroke="' + (h ? ON : GRAY) + '" stroke-width="' + (h ? 9 : 8) + '" stroke-linecap="round"/>' +
       (key === 'amy' ? '' : part('amy', 'cx="138" cy="147" rx="8" ry="6.5"', 'e')) +
       part('thal', 'cx="192" cy="110" rx="23" ry="15"', 'e') +
-      part('stem', 'M184,122 L208,122 L214,155 L188,155 Z M188,154 L214,154 L218,188 L196,190 C180,186 178,162 188,154 Z M194,188 L218,187 L219,222 L207,222 Z') +
+      part('stem', 'M184,122 L208,122 L214,155 L188,155 Z M194,188 L218,187 L219,222 L207,222 Z') +
+      part('pons', 'M188,154 L214,154 L218,188 L196,190 C180,186 178,162 188,154 Z') +
       (key === 'hypo' ? '' : part('hypo', 'cx="170" cy="127" rx="11" ry="7"', 'e')) +
+      '<path d="M168,134 L165,145" stroke="' + (key === 'pit' ? INK : LINE) + '" stroke-width="3"/>' +
+      (key === 'pit' ? '' : part('pit', 'cx="164" cy="148" rx="4.5" ry="4.5"', 'e')) +
       (key === 'amy' ? part('amy', 'cx="138" cy="147" rx="15" ry="12"', 'e') + '<circle cx="138" cy="147" r="24" fill="none" stroke="' + INK + '" stroke-width="5"/>' : '') +
       (key === 'hypo' ? part('hypo', 'cx="170" cy="127" rx="16" ry="11"', 'e') + '<circle cx="170" cy="127" r="22" fill="none" stroke="' + INK + '" stroke-width="5"/>' : '') +
+      (key === 'pit' ? part('pit', 'cx="164" cy="150" rx="11" ry="11"', 'e') + '<circle cx="164" cy="150" r="19" fill="none" stroke="' + INK + '" stroke-width="5"/>' : '') +
       '</svg>';
   }
 
@@ -185,6 +194,47 @@
     });
     bar.hidden = false;
 
+    // On phones, show one brain at a time (full width) with buttons to switch between them.
+    var scans = document.querySelector('.scans');
+    var sw = null;
+    if (scans) {
+      scans.querySelectorAll('figure').forEach(function (fig) {
+        var h = fig.querySelector('.brain');
+        if (h) fig.classList.add('fig-' + h.getAttribute('data-brain'));
+      });
+      sw = document.createElement('div');
+      sw.className = 'brain-switch';
+      sw.setAttribute('role', 'group');
+      sw.setAttribute('aria-label', 'Choose which brain to show');
+      var swLabel = document.createElement('span');
+      swLabel.textContent = 'Show:';
+      sw.appendChild(swLabel);
+      [['control', 'Control brain'], ['zombie', 'Zombie brain']].forEach(function (opt) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = opt[1];
+        b.setAttribute('data-show', opt[0]);
+        b.addEventListener('click', function () { show(opt[0]); });
+        sw.appendChild(b);
+      });
+      scans.parentNode.insertBefore(sw, scans);
+      show('control');
+    }
+    function show(which) {
+      scans.setAttribute('data-show', which);
+      sw.querySelectorAll('button').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.getAttribute('data-show') === which));
+      });
+    }
+
+    // On phones the drawings are still small, so point people to the buttons for small regions.
+    if (scans) {
+      var tip = document.createElement('p');
+      tip.className = 'phone-tip';
+      tip.textContent = 'On a phone, small regions are easier to choose with the buttons above.';
+      scans.parentNode.insertBefore(tip, scans.nextSibling);
+    }
+
     // Add a small brain icon to each region guide entry.
     var dl = document.querySelector('.region-guide');
     if (dl) {
@@ -221,18 +271,35 @@
       sp.parentNode.replaceChild(b, sp);
     });
 
+    // Clicking a region in either brain picture works like its button above the brains.
+    // (Only regions listed in this page's region guide respond; the buttons stay the keyboard route.)
+    document.querySelectorAll('.scans [data-r]').forEach(function (el) {
+      if (info[el.getAttribute('data-r')]) el.classList.add('pick');
+    });
+    document.querySelectorAll('.scans').forEach(function (sc) {
+      sc.addEventListener('click', function (e) {
+        var el = e.target.closest ? e.target.closest('[data-r]') : null;
+        var key = el && el.getAttribute('data-r');
+        if (key && info[key]) select(key);
+      });
+    });
+
     function select(key, from) {
       bar.querySelectorAll('button').forEach(function (b) {
         b.setAttribute('aria-pressed', String(b.getAttribute('data-region') === key));
       });
       document.querySelectorAll('.scans [data-r]').forEach(function (el) {
-        el.classList.toggle('sel', el.getAttribute('data-r') === key);
+        el.classList.toggle('sel', lit(el.getAttribute('data-r'), key));
       });
       document.querySelectorAll('.region-link').forEach(function (el) {
         el.classList.toggle('on', el.getAttribute('data-region') === key);
       });
       if (!now) return;
       now.textContent = info[key].name + ': ' + info[key].text;
+      // The "Back to the report" button sits just after the description, outside the live region,
+      // so screen readers announce only the description.
+      var oldBack = document.querySelector('.now-back');
+      if (oldBack) oldBack.parentNode.removeChild(oldBack);
       if (from) {
         // Clicked from the report: bring the brains into view, with a way back.
         var back = document.createElement('button');
@@ -243,9 +310,13 @@
           from.scrollIntoView({ block: 'center', behavior: smooth() });
           from.focus({ preventScroll: true });
         });
-        now.appendChild(document.createTextNode(' '));
-        now.appendChild(back);
-        now.scrollIntoView({ block: 'start', behavior: smooth() });
+        var holder = document.createElement('p');
+        holder.className = 'now-back';
+        holder.appendChild(back);
+        now.parentNode.insertBefore(holder, now.nextSibling);
+        // Bring the brains into view (the description is just below them).
+        var top = (sw && sw.offsetParent !== null) ? sw : (scans || now);
+        top.scrollIntoView({ block: 'start', behavior: smooth() });
       }
     }
 
