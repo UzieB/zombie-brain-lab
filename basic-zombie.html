@@ -25,8 +25,8 @@
 
 <main id="main" data-zombie="basic"><div class="wrap">
   <div class="case-head">
-    <div>
-      <p class="small" style="margin:0">Case file</p>
+    <div class="case-title">
+      <p class="case-tag"><a href="index.html#case-files">Case file<span class="visually-hidden">: see all case files</span></a></p>
       <h1 class="z">Basic Zombie</h1>
       <h2 class="visually-hidden">Field note</h2>
       <p class="note"><strong>Field note.</strong> Subject advances at a slow, even pace and stops only to eat whatever plant is in its path. It makes no attempt to avoid incoming fire. After losing its head, it keeps walking for a moment before falling.</p>
@@ -35,13 +35,14 @@
       <img src="images/basic-zombie.webp" alt="Basic Zombie from Plants vs. Zombies" width="1000" height="1602">
       <figcaption>Image: Basic Zombie, <cite>Plants vs. Zombies</cite> &copy; Electronic Arts. Not covered by this site&rsquo;s Creative Commons license. Source: <a href="https://plantsvszombies.fandom.com/wiki/Plants_vs._Zombies/Gallery#Zombies">Plants vs. Zombies Wiki (Fandom), Plants vs. Zombies/Gallery</a>.</figcaption>
     </figure>
+    <div class="case-predict">
+      <h2>Predict first</h2>
+      <p class="prose">Review the field notes and then consider how to explain the zombie&rsquo;s behavior.</p>
+      <p class="prose">Before you open the report: which parts of this zombie&rsquo;s brain do you think will look different from the control brain?</p>
+    </div>
   </div>
 
-  <h2>Predict first</h2>
-  <p class="prose">Review the field notes and then consider how to explain the zombie&rsquo;s behavior.</p>
-  <p class="prose">Before you open the report: which parts of this zombie&rsquo;s brain do you think will look different from the control brain?</p>
-
-  <h2>Scans</h2>
+  <h2 id="scans">Scans</h2>
   <div class="regions" id="regions" role="group" aria-label="Highlight a brain region" hidden></div>
   <p class="now" aria-live="polite" id="now"></p>
   <div class="scans">
@@ -50,7 +51,7 @@
       <figcaption>Control brain</figcaption>
     </figure>
     <figure>
-      <div class="brain" data-brain="zombie" data-alt="Zombie brain. The same view of the zombie&rsquo;s brain. The prefrontal cortex and amygdala are smaller than in the control brain and look damaged, with cracks and ragged edges. The cerebellum and brainstem look typical. The spinal cord is thick and braided like a reinforced cable."><noscript><p>The same view of the zombie&rsquo;s brain. The prefrontal cortex and amygdala are smaller than in the control brain and look damaged, with cracks and ragged edges. The cerebellum and brainstem look typical. The spinal cord is thick and braided like a reinforced cable.</p></noscript></div>
+      <div class="brain" data-brain="zombie" data-alt="Zombie brain. The same view of the zombie&rsquo;s brain. The prefrontal cortex and amygdala are smaller than in the control brain and look damaged, with cracks and ragged edges. Because the prefrontal cortex is smaller, the front of the brain ends further back; a dashed line shows where a typical brain&rsquo;s front edge would be. The cerebellum and brainstem look typical. The spinal cord is thick and braided like a reinforced cable."><noscript><p>The same view of the zombie&rsquo;s brain. The prefrontal cortex and amygdala are smaller than in the control brain and look damaged, with cracks and ragged edges. Because the prefrontal cortex is smaller, the front of the brain ends further back; a dashed line shows where a typical brain&rsquo;s front edge would be. The cerebellum and brainstem look typical. The spinal cord is thick and braided like a reinforced cable.</p></noscript></div>
       <figcaption><span class="z">Zombie</span> brain</figcaption>
     </figure>
   </div>
@@ -59,17 +60,17 @@
   <details>
     <summary>Region guide</summary>
     <dl class="region-guide"><dt data-region="pfc">Prefrontal cortex</dt><dd>The front of the frontal lobe. Supports planning and higher-level thinking.</dd><dt data-region="amy">Amygdala</dt><dd>A small, almond-shaped area deep in the temporal lobe. Processes emotion, especially fear and aggression.</dd><dt data-region="cbl">Cerebellum</dt><dd>At the back, below the cortex. Controls balance and coordination; helps with skills and habits.</dd><dt data-region="stem">Brainstem</dt><dd>Connects the brain to the spinal cord. Runs automatic functions such as breathing and heart rate.</dd><dt data-region="cord">Spinal cord</dt><dd>Not part of the brain. Carries messages between the brain and body and runs some reflexes on its own.</dd></dl>
-    <p class="small">Sources: Spielman et al. (2020), &sect;3.4, &sect;8.2, &sect;10.4; basal ganglia from <a href="about.html#ref-cleveland">Cleveland Clinic (2022)</a>. <span class="unchecked">(Unchecked by a person; AI research only.)</span></p>
+    <p class="small">Sources: Spielman et al. (2020), &sect;3.4, &sect;8.2, &sect;10.4. <span class="unchecked">(Unchecked by a person; AI research only.)</span></p>
   </details>
 
   <details class="report">
     <summary><h2 class="z">Brain report</h2> <span class="small">(open it after you make your guess)</span></summary>
     <div class="prose">
-      <p><strong>What&rsquo;s different.</strong> This zombie&rsquo;s prefrontal cortex and amygdala are smaller than the control brain&rsquo;s and look damaged. Its cerebellum and brainstem look typical, and its spinal cord is unusually thick.</p>
-      <p><strong>Why it might not plan.</strong> The prefrontal cortex supports higher-level thinking such as planning (<a href="#src-spielman">Spielman et al., 2020, &sect;3.4</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> With less of it, the zombie might head in a straight line instead of looking for a better route.</p>
-      <p><strong>Why it might not dodge.</strong> The amygdala helps process emotion, especially fear (<a href="#src-spielman">Spielman et al., 2020, &sect;8.2</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> A smaller amygdala could mean a weaker response to danger, which might explain why the zombie keeps coming under fire.</p>
-      <p><strong>How it still walks.</strong> Walking steadily takes balance and coordination, and the cerebellum handles those (<a href="#src-spielman">Spielman et al., 2020, &sect;3.4</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> This zombie&rsquo;s cerebellum looks typical.</p>
-      <p><strong>How it might walk without a head.</strong> In people, the spinal cord handles some reflexes without the brain, such as pulling your hand away from something hot (<a href="#src-spielman">Spielman et al., 2020, &sect;3.4</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> Animal research suggests the spinal cord also contains circuits that can produce a basic stepping rhythm (<a href="#src-guertin">Guertin, 2009</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> This zombie&rsquo;s extra-thick spinal cord might let it keep stepping for a moment after losing its brain. A human couldn&rsquo;t do this.</p>
+      <p><strong>What&rsquo;s different.</strong> This zombie&rsquo;s <span class="rl" data-region="pfc">prefrontal cortex</span> and <span class="rl" data-region="amy">amygdala</span> are smaller than the control brain&rsquo;s and look damaged. Its <span class="rl" data-region="cbl">cerebellum</span> and <span class="rl" data-region="stem">brainstem</span> look typical, and its <span class="rl" data-region="cord">spinal cord</span> is unusually thick.</p>
+      <p><strong>Why it might not plan.</strong> The <span class="rl" data-region="pfc">prefrontal cortex</span> supports higher-level thinking such as planning (<a href="#src-spielman">Spielman et al., 2020, &sect;3.4</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> With less of it, the zombie might head in a straight line instead of looking for a better route.</p>
+      <p><strong>Why it might not dodge.</strong> The <span class="rl" data-region="amy">amygdala</span> helps process emotion, especially fear (<a href="#src-spielman">Spielman et al., 2020, &sect;8.2</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> A smaller amygdala could mean a weaker response to danger, which might explain why the zombie keeps coming under fire.</p>
+      <p><strong>How it still walks.</strong> Walking steadily takes balance and coordination, and the <span class="rl" data-region="cbl">cerebellum</span> handles those (<a href="#src-spielman">Spielman et al., 2020, &sect;3.4</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> This zombie&rsquo;s cerebellum looks typical.</p>
+      <p><strong>How it might walk without a head.</strong> In people, the <span class="rl" data-region="cord">spinal cord</span> handles some reflexes without the brain, such as pulling your hand away from something hot (<a href="#src-spielman">Spielman et al., 2020, &sect;3.4</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> Animal research suggests the spinal cord also contains circuits that can produce a basic stepping rhythm (<a href="#src-guertin">Guertin, 2009</a>). <span class="unchecked">(Unchecked by a person; AI research only.)</span> This zombie&rsquo;s extra-thick spinal cord might let it keep stepping for a moment after losing its brain. A human couldn&rsquo;t do this.</p>
     </div>
     <h2>Real-brain takeaway</h2>
     <ul class="prose"><li>The prefrontal cortex supports planning and higher-level thinking.</li><li>The amygdala processes emotion, especially fear.</li><li>The cerebellum handles balance and coordination.</li><li>The spinal cord carries messages between the brain and body and runs some reflexes on its own.</li></ul>
